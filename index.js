@@ -6,6 +6,7 @@ import UserRoute from './routes/UserRoute.js'
 import ShoesRoute from './routes/ShoesRoute.js'
 import TransactionRoute from './routes/TransactionRoute.js'
 import "dotenv/config"
+import AdminRoute from './routes/AdminRoute.js'
 
 const app = express()
 const PORT = process.env.PORT
@@ -19,6 +20,7 @@ app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 
 app.use("/user", UserRoute)
+app.use("/admin", AdminRoute)
 app.use("/shoes", ShoesRoute);
 app.use("/transaction", TransactionRoute);
 
